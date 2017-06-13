@@ -6,7 +6,7 @@
   }
 
   WordCount.prototype.split = function() {
-    return this.string = this.string.split(/\W+/)
+    return this.string = this.string.toLowerCase().split(/\W+/)
   };
 
   WordCount.prototype.createDictionary = function() {
