@@ -8,8 +8,8 @@ describe("WordCount", function() {
   });
 
   describe("#split", function() {
-    it("separates a string into an array of words", function() {
-      expect(words.split()).toEqual(["This", "is", "a", "string", "great", "stuff"]);
+    it("separates a string into an array of lowercase words", function() {
+      expect(words.split()).toEqual(["this", "is", "a", "string", "great", "stuff"]);
     });
   });
 
