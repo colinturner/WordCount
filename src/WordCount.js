@@ -1,7 +1,17 @@
-function WordCount(string) {
-  this.string = string;
-}
+(function(exports) {
 
-WordCount.prototype.split = function(text) {
-  return text.split(" ")
-};
+  function WordCount(string) {
+    this.string = string;
+  }
+
+  WordCount.prototype.split = function() {
+    return this.string.split(" ")
+  };
+
+  WordCount.prototype.format = function() {
+    return this.split();
+  };
+
+  exports.WordCount = WordCount;
+
+})(this);
