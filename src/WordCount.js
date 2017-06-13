@@ -1,5 +1,5 @@
 function WordCount(string) {
-  console.log(string);
+  this.string = string;
 }
 
 WordCount.prototype.split = function(text) {
