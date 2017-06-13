@@ -5,7 +5,7 @@
   }
 
   WordCount.prototype.split = function() {
-    return this.string.split(" ")
+    return this.string.split(/\W+/);
   };
 
   WordCount.prototype.format = function() {
