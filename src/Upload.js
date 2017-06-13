@@ -1,7 +1,7 @@
 window.onload = function() {
 		var fileInput = document.getElementById('fileInput');
     var error = document.getElementById('error');
-    var congrats = ["Great choice!", "You're so good at this!", "What a selection!"];
+    var congratsOptions = ["Great choice!", "You're so good at this!", "What a selection!"];
 
 		fileInput.addEventListener('change', function(e) {
 			var file = fileInput.files[0];
@@ -9,7 +9,9 @@ window.onload = function() {
 
       // Check that the user submitted a .txt file
 			if (file.type.match(textType)) {
-        error.innerText = congrats[Math.floor(Math.random() * congrats.length)];
+        var randomCongratsMessage = congratsOptions[Math.floor(Math.random() * congratsOptions.length)];
+        error.innerText = randomCongratsMessage;
+
 				var reader = new FileReader();
         reader.readAsText(file);
 
