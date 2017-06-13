@@ -19,6 +19,13 @@ describe("WordCount", function() {
       words.createDictionary();
       expect(words.dict).toEqual({"this": 2, "is": 1, "a": 1, "string": 1, "great": 1, "stuff": 1});
     });
+
+    it("ignores numbers, only documents words", function() {
+      numbersAndWords = "This is. quite. the 67 the inconvenient 89 String."
+      numbersAndWords.split();
+      numbersAndWords.createDictionary();
+      expect(numbersAndWords.dict).toEqual({"this": 1, "is": 1, "quite": 1, "the": 2, "inconvenient": 1, "string": 1})
+    });
   });
 
 })

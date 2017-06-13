@@ -12,7 +12,7 @@
   WordCount.prototype.createDictionary = function() {
     for (var i = 0; i < this.string.length; i++) {
       var word = this.string[i];
-      if (this.dict[word] == undefined) {
+      if (!this.dict[word]) {
         this.dict[word] = 1;
       } else {
         this.dict[word] += 1;
@@ -22,7 +22,8 @@
 
   WordCount.prototype.format = function() {
     this.split();
-    return this.createDictionary();
+    this.createDictionary();
+    console.log(this.dict);
   };
 
   exports.WordCount = WordCount;
