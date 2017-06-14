@@ -24,6 +24,15 @@
     }
   };
 
+  WordCount.prototype.sortArray = function() {
+    var myDict = this.dict;
+    var myKeys = this.keys;
+    var compare = function(a,b) {
+      return myDict[b] - myDict[a];
+    };
+    myKeys.sort(compare);
+  };
+
   WordCount.prototype.format = function() {
     this.split();
     this.createDictionary();
