@@ -38,7 +38,7 @@
     for (var i = 0; i < this.keys.length; i++) {
       var key = this.keys[i];
       var node = document.createElement("LI");
-      var textnode = document.createTextNode(key);
+      var textnode = document.createTextNode(key + " appears " + this.dict[key] + " times");
       node.appendChild(textnode);
       document.getElementById("myList").appendChild(node);
     }
