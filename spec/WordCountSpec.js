@@ -26,6 +26,13 @@ describe("WordCount", function() {
       numbersAndWords.createDictionary();
       expect(numbersAndWords.dict).toEqual({"this": 1, "is": 1, "quite": 1, "the": 2, "inconvenient": 1, "string": 1})
     });
+
+    it("creates an array with all words", function() {
+      var manyWords = new WordCount("the The the the is is is a a tree");
+      manyWords.split();
+      manyWords.createDictionary();
+      expect(manyWords.keys).toEqual("the", "is", "a", "tree");
+    });
   });
 
 })
