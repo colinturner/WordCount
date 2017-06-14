@@ -10,7 +10,7 @@
     return this.string = this.string.toLowerCase().split(/\W+/)
   };
 
-  WordCount.prototype.createDictionary = function() {
+  WordCount.prototype.getData = function() {
     for (var i = 0; i < this.string.length; i++) {
       var word = this.string[i];
       if (!/\d+/.test(word)) {
@@ -34,14 +34,13 @@
   };
 
   WordCount.prototype.displayDivs = function () {
-    console.log(this.keys);
     for (var i = 0; i < this.keys.length; i++) {
       var key = this.keys[i];
-      var node = document.createElement("LI");
+      var node = document.createElement("DIV");
       if (!this.isPrime(this.dict[key])) {
-        var textnode = document.createTextNode(key + " appears " + this.dict[key] + " times");
+        var textnode = document.createTextNode('"' + key + '"' + " appears " + this.dict[key] + " times");
       } else {
-        var textnode = document.createTextNode(key + " appears " + this.dict[key] + " times. PRIME!");
+        var textnode = document.createTextNode('"' + key + '"' + " appears " + this.dict[key] + " times. PRIME WORDCOUNT!");
       }
       node.appendChild(textnode);
       document.getElementById("myList").appendChild(node);
@@ -56,7 +55,7 @@
 
   WordCount.prototype.format = function() {
     this.split();
-    this.createDictionary();
+    this.getData();
     this.sortArray();
     this.displayDivs();
   };

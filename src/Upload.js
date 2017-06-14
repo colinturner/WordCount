@@ -17,8 +17,7 @@ window.onload = function() {
 
         // Passes the .txt file's contents as a string to the WordCount function
 				reader.onload = function() {
-          var wc = new WordCount(reader.result);
-					var formattedWords = wc.format();
+          new WordCount(reader.result).format();
 				}
 
         // Prompt user to upload a .txt type file

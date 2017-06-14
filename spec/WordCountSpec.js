@@ -13,24 +13,24 @@ describe("WordCount", function() {
     });
   });
 
-  describe("#createDictionary", function() {
+  describe("#getData", function() {
     it("creates dictionary with words and their counts", function() {
       words.split();
-      words.createDictionary();
+      words.getData();
       expect(words.dict).toEqual({"this": 2, "is": 1, "a": 1, "string": 1, "great": 1, "stuff": 1});
     });
 
     it("ignores numbers, only documents words", function() {
       var numbersAndWords = new WordCount("This is. quite. the 67 the inconvenient 89 String");
       numbersAndWords.split();
-      numbersAndWords.createDictionary();
+      numbersAndWords.getData();
       expect(numbersAndWords.dict).toEqual({"this": 1, "is": 1, "quite": 1, "the": 2, "inconvenient": 1, "string": 1})
     });
 
     it("creates an array with all words", function() {
       var manyWords = new WordCount("the The the the is is is a a tree");
       manyWords.split();
-      manyWords.createDictionary();
+      manyWords.getData();
       expect(manyWords.keys).toEqual(["the", "is", "a", "tree"]);
     });
   });
@@ -39,7 +39,7 @@ describe("WordCount", function() {
     it("sorts the array by frequency of words", function(){
       var moreWords = new WordCount("the is is is is a a tree tree tree");
       moreWords.split();
-      moreWords.createDictionary();
+      moreWords.getData();
       moreWords.sortArray();
       expect(moreWords.keys).toEqual(["is", "tree", "a", "the"]);
     });
