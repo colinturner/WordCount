@@ -33,10 +33,22 @@
     myKeys.sort(compare);
   };
 
+  WordCount.prototype.displayDivs = function () {
+    console.log(this.keys);
+    for (var i = 0; i < this.keys.length; i++) {
+      var key = this.keys[i];
+      var node = document.createElement("LI");
+      var textnode = document.createTextNode(key);
+      node.appendChild(textnode);
+      document.getElementById("myList").appendChild(node);
+    }
+  };
+
   WordCount.prototype.format = function() {
     this.split();
     this.createDictionary();
-    console.log(this.keys);
+    this.sortArray();
+    this.displayDivs();
   };
 
   exports.WordCount = WordCount;
