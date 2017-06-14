@@ -11,11 +11,13 @@
 
   WordCount.prototype.createDictionary = function() {
     for (var i = 0; i < this.string.length; i++) {
-      var word = this.string[i];
-      if (!this.dict[word]) {
-        this.dict[word] = 1;
-      } else {
-        this.dict[word] += 1;
+      var word = this.string[i];    
+      if (!/\d+/.test(word)) {
+        if (!this.dict[word]) {
+          this.dict[word] = 1;
+        } else {
+          this.dict[word] += 1;
+        }
       }
     }
   };

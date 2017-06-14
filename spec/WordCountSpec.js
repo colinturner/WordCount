@@ -21,7 +21,7 @@ describe("WordCount", function() {
     });
 
     it("ignores numbers, only documents words", function() {
-      numbersAndWords = "This is. quite. the 67 the inconvenient 89 String."
+      var numbersAndWords = new WordCount("This is. quite. the 67 the inconvenient 89 String");
       numbersAndWords.split();
       numbersAndWords.createDictionary();
       expect(numbersAndWords.dict).toEqual({"this": 1, "is": 1, "quite": 1, "the": 2, "inconvenient": 1, "string": 1})
