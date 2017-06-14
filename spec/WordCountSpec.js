@@ -31,7 +31,7 @@ describe("WordCount", function() {
       var manyWords = new WordCount("the The the the is is is a a tree");
       manyWords.split();
       manyWords.createDictionary();
-      expect(manyWords.keys).toEqual("the", "is", "a", "tree");
+      expect(manyWords.keys).toEqual(["the", "is", "a", "tree"]);
     });
   });
 

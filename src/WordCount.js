@@ -3,6 +3,7 @@
   function WordCount(string) {
     this.string = string;
     this.dict = {};
+    this.keys = [];
   }
 
   WordCount.prototype.split = function() {
@@ -11,10 +12,11 @@
 
   WordCount.prototype.createDictionary = function() {
     for (var i = 0; i < this.string.length; i++) {
-      var word = this.string[i];    
+      var word = this.string[i];
       if (!/\d+/.test(word)) {
         if (!this.dict[word]) {
           this.dict[word] = 1;
+          this.keys.push(word);
         } else {
           this.dict[word] += 1;
         }
@@ -25,7 +27,7 @@
   WordCount.prototype.format = function() {
     this.split();
     this.createDictionary();
-    console.log(this.dict);
+    console.log(this.keys);
   };
 
   exports.WordCount = WordCount;
