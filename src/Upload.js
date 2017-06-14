@@ -1,7 +1,7 @@
 window.onload = function() {
 		var fileInput = document.getElementById('fileInput');
     var error = document.getElementById('error');
-    var congratsOptions = ["Great choice!", "You're so good at this!", "What a selection!"];
+    var congratsOptions = ["Great choice!", "You're so good at this!", "What a selection! Wow!"];
 
 		fileInput.addEventListener('change', function(e) {
 			var file = fileInput.files[0];

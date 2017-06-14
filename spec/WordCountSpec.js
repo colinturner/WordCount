@@ -45,14 +45,14 @@ describe("WordCount", function() {
     });
   });
 
-  describe("#displayDivs", function() {
-    it("displays each word alongside its count", function(){
-      var moreWords = new WordCount("the is is is is a a tree tree tree");
-      moreWords.split();
-      moreWords.createDictionary();
-      moreWords.sortArray();
-      moreWords.displayDivs();
+  describe("isPrime", function() {
+    it("returns true if a number is prime; false otherwise", function() {
+      expect(isPrime(13)).toEqual(true);
+      expect(isPrime(23)).toEqual(true);
+      expect(isPrime(15)).toEqual(false);
     });
   });
+
+
 
 })
