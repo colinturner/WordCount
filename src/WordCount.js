@@ -38,7 +38,11 @@
     for (var i = 0; i < this.keys.length; i++) {
       var key = this.keys[i];
       var node = document.createElement("LI");
-      var textnode = document.createTextNode(key + " appears " + this.dict[key] + " times");
+      if (!this.isPrime(this.dict[key])) {
+        var textnode = document.createTextNode(key + " appears " + this.dict[key] + " times");
+      } else {
+        var textnode = document.createTextNode(key + " appears " + this.dict[key] + " times. PRIME!");
+      }
       node.appendChild(textnode);
       document.getElementById("myList").appendChild(node);
     }
