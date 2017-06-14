@@ -47,9 +47,10 @@ describe("WordCount", function() {
 
   describe("isPrime", function() {
     it("returns true if a number is prime; false otherwise", function() {
-      expect(isPrime(13)).toEqual(true);
-      expect(isPrime(23)).toEqual(true);
-      expect(isPrime(15)).toEqual(false);
+      var words = new WordCount("Here are words")
+      expect(words.isPrime(13)).toEqual(true);
+      expect(words.isPrime(23)).toEqual(true);
+      expect(words.isPrime(15)).toEqual(false);
     });
   });
 
