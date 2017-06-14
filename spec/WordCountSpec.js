@@ -35,4 +35,14 @@ describe("WordCount", function() {
     });
   });
 
+  describe("#sortArray", function() {
+    it("sorts the array by frequency of words", function(){
+      var manyWords = new WordCount("the is is is is a a tree tree tree");
+      manyWords.split();
+      manyWords.createDictionary();
+      manyWords.sortArray();
+      expect(manyWords.keys).toEqual(["is", "tree", "a", "the"]);
+    });
+  });
+
 })
