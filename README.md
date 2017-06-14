@@ -14,6 +14,8 @@ I can even tell if the word-count of a specific word happens to be a prime numbe
 3. Run `open index.html`
 4. Your browser should open. Follow the instructions on the page.
 
+Jasmine tests can be run from your terminal using `open SpecRunner.html`. Your browser will open.
+
 ## User Stories
 ```
 As a linguist,
