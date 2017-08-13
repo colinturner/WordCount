@@ -7,7 +7,7 @@
   }
 
   WordCount.prototype.split = function() {
-    return this.string = this.string.toLowerCase().split(/\W+/)
+    return this.string = this.string.toLowerCase().split(/[^\w\u00C0-\u00ff]+/g)
   };
 
   WordCount.prototype.getData = function() {
