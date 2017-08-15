@@ -1,0 +1,8 @@
+En kollisjon mellom to kjøretøyer er enkel fysikk. Alt er overlatt
+til tilfeldighetene, men alle tilfeldighetene kan forklares med
+ligningen kraft ganger tid er lik masse ganger endring i
+hastighet. Sett inn tilfeldighetene som tall for variablene og du
+har en fortelling som er enkel, sann og nådeløs. Den forteller
+for eksempel hva som skjer når et fullastet vogntog på tjuefem
+tonn og med en fart på åtti kilometer i timen treffer en
+personbil på atten hundre kilo med samme fart. 

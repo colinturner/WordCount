@@ -1,31 +1,34 @@
 (function(exports) {
 
   function WordCount(string) {
-    this.string = string;
-    this.dict = {};
+    this.originalString = string;
+    this.myString = string;
+    this.dictCount = {};
     this.keys = [];
+    this.dictSentence = {};
   }
 
   WordCount.prototype.split = function() {
-    return this.string = this.string.toLowerCase().split(/[^\w\u00C0-\u00ff]+/g)
+    return this.myString = this.myString.toLowerCase().split(/[^\w\u00C0-\u00ff]+/g)
   };
 
   WordCount.prototype.getData = function() {
-    for (var i = 0; i < this.string.length; i++) {
-      var word = this.string[i];
+    console.log(this.myString);
+    for (var i = 0; i < this.myString.length; i++) {
+      var word = this.myString[i];
       if (!/\d+/.test(word)) {
-        if (!this.dict[word]) {
-          this.dict[word] = 1;
+        if (!this.dictCount[word]) {
+          this.dictCount[word] = 1;
           this.keys.push(word);
         } else {
-          this.dict[word] += 1;
+          this.dictCount[word] += 1;
         }
       }
     }
   };
 
   WordCount.prototype.sortArray = function() {
-    var myDict = this.dict;
+    var myDict = this.dictCount;
     var myKeys = this.keys;
     var compare = function(a,b) {
       return myDict[b] - myDict[a];
@@ -37,21 +40,16 @@
     for (var i = 0; i < this.keys.length; i++) {
       var key = this.keys[i];
       var node = document.createElement("DIV");
-      if (!this.isPrime(this.dict[key])) {
-        var textnode = document.createTextNode('"' + key + '"' + " appears " + this.dict[key] + " times");
-      } else {
-        var textnode = document.createTextNode('"' + key + '"' + " appears " + this.dict[key] + " times. PRIME WORDCOUNT!");
-      }
+      var textnode = document.createTextNode((i + 1) + '. "' + key + '"' + " appears " + this.dictCount[key] + " times. Sentence: " + this.getExampleSentence(key));
       node.appendChild(textnode);
       document.getElementById("myList").appendChild(node);
     }
   };
 
-  WordCount.prototype.isPrime = function (num) {
-    for(var i = 2; i < num; i++)
-    if(num % i === 0) return false;
-    return num !== 1;
-  };
+  WordCount.prototype.getExampleSentence = function(word) {
+    let re = new RegExp("[^.?!]*(?:[.?,\s!])(" + word + ")(?=[\s.?!,])[^.?!]*[.?!]");
+    return this.originalString.match(re);
+  }
 
   WordCount.prototype.format = function() {
     this.split();
